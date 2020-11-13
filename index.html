@@ -8,22 +8,24 @@
 	<body>
 		<h1>Hello World</h1>
 		<p>This is a test</p>
-		<button type="button" id="showDiv">Click Me!</button>
-		<div id="clicked">
+		<button id="toggleButton">Show Message</button>
+		<div id="messageDiv">
 			<p>Yay! You clicked the button</p>
-			<button type="button" id="hideDiv"></button>
 		</div>
 		<script>
-			const messageDiv = document.getElementById('clicked');
+			const toggleButton = document.getElementById('toggleButton');
+			const messageDiv = document.getElementById('messageDiv');
 			messageDiv.style.display = 'none';
-
-			document.getElementById('showDiv').addEventListener('click', function () {
-				messageDiv.style.display = 'block';
-			});
-
-			document.getElementById('showDiv').addEventListener('click', function () {
-				messageDiv.style.display = 'none';
-			});
+			
+			toggleButton.onclick = function () {
+				if (messageDiv.style.display === 'none') {
+					messageDiv.style.display = 'block';
+					toggleButton.value = 'Hide Message';
+				} else {
+					messageDiv.style.display = 'block';
+					toggleButton.value = 'Show Message';
+				}
+			}
 		</script>
 	</body>
 </html>
