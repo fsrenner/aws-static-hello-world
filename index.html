@@ -7,5 +7,23 @@
 	</head>
 	<body>
 		<h1>Hello World</h1>
+		<p>This is a test</p>
+		<button type="button" id="showDiv">Click Me!</button>
+		<div id="clicked">
+			<p>Yay! You clicked the button</p>
+			<button type="button" id="hideDiv"></button>
+		</div>
+		<script>
+			const messageDiv = document.getElementById('clicked');
+			messageDiv.style.display = 'none';
+
+			document.getElementById('showDiv').addEventListener('click', function () {
+				messageDiv.style.display = 'block';
+			});
+
+			document.getElementById('showDiv').addEventListener('click', function () {
+				messageDiv.style.display = 'none';
+			});
+		</script>
 	</body>
 </html>
